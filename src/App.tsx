@@ -1,9 +1,9 @@
-import { RippleButton as Control } from "./controls";
+import { DropdownButton1 as Button } from "./buttons";
 
 function App() {
   return (
     <>
-      <Control />
+      <Button />
     </>
   );
 }
