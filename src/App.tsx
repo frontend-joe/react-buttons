@@ -1,4 +1,4 @@
-import { DropdownButton1 as Button } from "./buttons";
+import { DeleteButton as Button } from "./buttons";
 
 function App() {
   return (

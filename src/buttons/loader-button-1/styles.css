@@ -1,0 +1,47 @@
+.loader-button {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  border-radius: 6px;
+  background: #bd2e57;
+  padding: 26px 30px;
+}
+
+.loader {
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  width: 150%;
+  height: 150%;
+  border-radius: inherit;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.loader-button.loading .loader {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes spin {
+  100% {
+    rotate: 1turn;
+  }
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.4);
+  border-top-color: white;
+  animation: spin 1s infinite linear;
+}
