@@ -1,4 +1,4 @@
-import { DeleteButton as Button } from "./buttons";
+import { SendButton as Button } from "./buttons/send-button/SendButton";
 
 function App() {
   return (

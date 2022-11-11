@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: #1d1e22;
+}
+
+button {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  width: 208px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 28px;
+  font-family: "Euclid Circular A";
+  color: #f7f7f7;
+  background: #d62959;
+  cursor: pointer;
+}
+
+.text {
+  position: absolute;
+  left: 64px;
+  display: block;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.icon {
+  font-size: 30px;
+}
+
+button.sending .text {
+  animation: textAnimation 5s both;
+}
+
+button.sending .icon {
+  animation: iconAnimation 5s both;
+}
+
+@keyframes textAnimation {
+  0%,
+  30% {
+    translate: 0 0;
+  }
+  39.9% {
+    translate: 0 100px;
+  }
+  40% {
+    translate: 300px 100px;
+  }
+  40.1% {
+    translate: 300px -60px;
+  }
+  40.2% {
+    translate: 33px -60px;
+  }
+  45% {
+    translate: 33px 0;
+  }
+  95% {
+    translate: 33px 0;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes iconAnimation {
+  0%,
+  5% {
+    translate: 0 0;
+  }
+  20%,
+  30% {
+    translate: -250px 0;
+  }
+  40% {
+    translate: 200px 0;
+    scale: 2;
+  }
+  40.1% {
+    translate: 200px -60px;
+    scale: 1;
+  }
+  40.2% {
+    translate: 34px -60px;
+  }
+  45%,
+  95% {
+    translate: 34px 0;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
