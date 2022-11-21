@@ -1,47 +1,60 @@
-.loader-button {
+.button {
   position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 72px;
   border: 0;
   border-radius: 6px;
-  background: #bd2e57;
-  padding: 26px 30px;
-}
-
-.loader {
-  position: absolute;
-  top: -25%;
-  left: -25%;
-  width: 150%;
-  height: 150%;
-  border-radius: inherit;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(3px);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-}
-
-.loader-button.loading .loader {
-  opacity: 1;
-  visibility: visible;
+  background: #24b78e;
+  color: #f9f9f9;
+  padding: 0 40px 0 30px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: "Euclid Circular A";
 }
 
 @keyframes spin {
   100% {
-    rotate: 1turn;
+    rotate: 360deg;
   }
 }
 
-.loader::after {
-  content: "";
+.button.loading img {
+  animation: spin 3s infinite linear;
+}
+
+.button > span:first-child {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  /* background: red; */
+}
+
+.button > span > img {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 3px solid rgba(0, 0, 0, 0.4);
-  border-top-color: white;
-  animation: spin 1s infinite linear;
+  transition: 0.3s;
+}
+
+.button > span > img:first-child {
+  top: 0;
+  left: 0;
+
+  width: 30px;
+}
+.button > span > img:last-child {
+  right: 0;
+  bottom: 0;
+  width: 14px;
+  opacity: 0;
+}
+
+.button.loading img:first-child {
+  width: 23px;
+}
+
+.button.loading img:last-child {
+  opacity: 1;
 }

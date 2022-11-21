@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./styles.css";
+import iconSettings from "./settings.svg";
 
-export const LoaderButton1 = () => {
+export const Button = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleClick = () => {
@@ -9,16 +10,19 @@ export const LoaderButton1 = () => {
 
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 4000);
   };
 
   return (
     <button
       onClick={handleClick}
-      className={`loader-button ${isLoading ? "loading" : ""}`}
+      className={`button ${isLoading ? "loading" : ""}`}
     >
-      Register Now
-      <span className="loader"></span>
+      <span>
+        <img src={iconSettings} />
+        <img src={iconSettings} />
+      </span>
+      <span>Create User</span>
     </button>
   );
 };
