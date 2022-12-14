@@ -1,4 +1,4 @@
-import { Button } from "./buttons/delete-button-2/Button";
+import { Button } from "./buttons/fab-button/Button";
 
 function App() {
   return (
