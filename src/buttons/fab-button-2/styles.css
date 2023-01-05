@@ -1,0 +1,97 @@
+body {
+  background: #4833a0;
+  font-family: "Euclid Circular A", "Poppins";
+}
+
+.fab {
+  position: fixed;
+  right: 30px;
+  bottom: 38px;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.fab > button {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 0;
+  background: #7352ff;
+  color: #f9f9f9;
+  transition: 0.2s;
+}
+
+.fab > button > i {
+  font-size: 32px;
+}
+
+.menu {
+  position: absolute;
+  bottom: 76px;
+  left: 0;
+  display: grid;
+  place-content: center;
+  gap: 12px;
+  width: 64px;
+  scale: 0;
+  translate: 0 80%;
+  transform-origin: 50% 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.375s;
+}
+
+.fab.open > button {
+  rotate: 45deg;
+}
+
+.fab.open .menu {
+  scale: 1;
+  translate: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu > button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e0e0e0;
+  transition: 0.3s;
+}
+
+.menu > button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.menu > button > span {
+  position: absolute;
+  right: 64px;
+  white-space: nowrap;
+  translate: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+.menu > button:hover > span {
+  translate: 0;
+  opacity: 1;
+  visibility: visible;
+}

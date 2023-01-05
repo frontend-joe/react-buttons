@@ -1,11 +1,13 @@
 body {
-  background: #42177f;
+  background: #253661;
 }
 
 .fab {
   position: fixed;
   right: 30px;
   bottom: 38px;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 button {
@@ -23,7 +25,8 @@ button {
   height: 64px;
   border-radius: 50%;
   border: 0;
-  background: #eb2ef7;
+  background: #1d91ea;
+
   color: #f9f9f9;
   transition: 0.2s;
   rotate: 0;
@@ -46,7 +49,7 @@ button {
   rotate: -220deg;
   scale: 0.7;
   opacity: 0;
-  transition: 0.4s;
+  transition: 0.4s ease-out;
 }
 
 .fab.open > button {
@@ -61,6 +64,7 @@ button {
 
 .menu > button {
   position: absolute;
+  color: #e0e0e0;
   transition: 0.3s;
 }
 
@@ -75,17 +79,14 @@ button {
 .menu > button:nth-child(1) {
   left: 76px;
   top: -62px;
-  color: #439ffd;
 }
 
 .menu > button:nth-child(2) {
   left: -20px;
   top: -16px;
-  color: #36c6a0;
 }
 
 .menu > button:nth-child(3) {
   left: -64px;
   top: 80px;
-  color: #bfca68;
 }

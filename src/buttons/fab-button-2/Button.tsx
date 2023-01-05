@@ -2,7 +2,7 @@ import { FC, PropsWithChildren, useState } from "react";
 import "./styles.css";
 
 const Icon: FC<PropsWithChildren> = ({ children }) => (
-  <span className="material-symbols-outlined">{children}</span>
+  <i className="material-symbols-outlined">{children}</i>
 );
 
 export const Button = () => {
@@ -15,13 +15,16 @@ export const Button = () => {
       </button>
       <div className="menu">
         <button>
-          <Icon>favorite</Icon>
+          <Icon>person_add</Icon>
+          <span>Add Users</span>
         </button>
         <button>
-          <Icon>sell</Icon>
+          <Icon>description</Icon>
+          <span>Documents</span>
         </button>
         <button>
           <Icon>settings</Icon>
+          <span>Settings</span>
         </button>
       </div>
     </div>

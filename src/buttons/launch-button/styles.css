@@ -1,0 +1,85 @@
+button {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 24px 0 48px;
+  background: #2ed1a1;
+  border: 0;
+  border-radius: 6px;
+  color: #1a1a1a;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: "Euclid Circular A", "Poppins";
+  cursor: pointer;
+}
+
+button span {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+button.launching span {
+  opacity: 0;
+}
+
+.rocket {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -44px -50%;
+  width: 18px;
+  height: 18px;
+}
+
+@keyframes rocket {
+  0% {
+  }
+  10%,
+  15% {
+    rotate: -45deg;
+    translate: -50% 6px;
+    scale: 1.5;
+    opacity: 1;
+  }
+  30%,
+  100% {
+    translate: -50% -200px;
+    scale: 5;
+    opacity: 0;
+  }
+}
+
+button.launching .rocket {
+  animation: rocket 3s infinite both;
+}
+
+.smoke {
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  translate: -50% 0;
+  width: 200px;
+  transition: 3s;
+}
+
+@keyframes smoke {
+  0% {
+  }
+  10%,
+  15% {
+    translate: -50% 0;
+    scale: 1 1;
+  }
+  30%,
+  100% {
+    translate: -50% -140px;
+    scale: 1.25 1.25;
+  }
+}
+
+button.launching .smoke {
+  animation: smoke 3s infinite;
+}
