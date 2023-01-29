@@ -2,15 +2,15 @@ import { useState } from "react";
 import "./styles.css";
 import iconSettings from "./settings.svg";
 
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export const Button = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setIsLoading(true);
-
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 4000);
+    await delay(3500);
+    setIsLoading(false);
   };
 
   return (
@@ -18,11 +18,8 @@ export const Button = () => {
       onClick={handleClick}
       className={`button ${isLoading ? "loading" : ""}`}
     >
-      <span>
-        <img src={iconSettings} />
-        <img src={iconSettings} />
-      </span>
-      <span>Create User</span>
+      <img src={iconSettings} />
+      <span>{isLoading ? "Deploying" : "Deploy Site"}</span>
     </button>
   );
 };
