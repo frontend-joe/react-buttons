@@ -1,0 +1,93 @@
+button {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 72px;
+  width: 220px;
+  border: 0;
+  border-radius: 10px;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  background: #282828;
+  color: #f9f9f9;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(600px);
+  }
+}
+
+@keyframes spin {
+  100% {
+    rotate: 1turn;
+  }
+}
+
+button > :is(span, img) {
+  position: relative;
+  z-index: 3;
+}
+
+button > span:last-child {
+  width: 106px;
+}
+
+button img {
+  width: 26px;
+  height: 26px;
+}
+
+button :is(span, img) {
+  transition: 0.125s;
+}
+
+button:disabled :is(span, img) {
+  opacity: 0.7;
+}
+
+button::before,
+button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+button::before {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+button::after {
+  left: -100%;
+  background: #34d297;
+}
+
+button.loading::before,
+button.loading::after {
+  opacity: 1;
+}
+
+button.loading::after {
+  animation: loading 1s infinite linear;
+}
+
+button.loading img {
+  animation: spin 0.5s infinite linear;
+}

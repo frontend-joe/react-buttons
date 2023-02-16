@@ -1,4 +1,4 @@
-import { Button } from "./buttons/loader-button-1/Button";
+import { Button } from "./buttons/reload-button-1/Button";
 
 function App() {
   return (
